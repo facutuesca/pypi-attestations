@@ -49,13 +49,14 @@ jobs:
           name: distributions
           path: dist/
       - name: Create provenances
-        id: create_provenances
+        id: create-provenances
         uses: actions/attest-build-provenance@v1
         with:
           subject-path: 'dist/*'
       - name: Convert provenances
         uses: trailofbits/gh-action-adapt-sigstore-pypi@main
         with:
-          bundles: ${{ steps.create_provenances.outputs.bundle-path }}
+          bundles: ${{ steps.create-provenances.outputs.bundle-path }}
+          output-dir: dist/
 
 
