@@ -50,7 +50,7 @@ jobs:
           path: dist/
       - name: Create provenances
         id: create-provenances
-        uses: actions/attest-build-provenance@v1
+        uses: actions/attest-build-provenance@v2
         with:
           subject-path: 'dist/*'
       - name: Convert provenances
